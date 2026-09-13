@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "d7f5a682b27d4573054d09855a507fbea56c9ad69bfc62685c185fedd32df4e7",
+  "raw_evidence_visibility": "Private; do not disclose conditions to blind reviewers.",
+  "sha256": {
+    "attempt-2-preregistration.json": "dae6bc27e889ae7121a558a50643017552994c8c6f0e78873329808f36931794",
+    "plan.json": "04c68ce6caa25229c9f6bf5d7a16099540f9d562278f869c12d89266f13ea5ef",
+    "attempt-2-summary.json": "904cf71786d2fa73d7f83d1361d6cb3aa740670d1dc0701ba7845baaea28cfc6",
+    "partial-results.json": "aa210fda123006f5c7fefed8227a648acbcf25e5a01df52cf90f84beda673bcc",
+    "partial-mechanical-report.json": "6c2ace959146bf99b1863848fb60e2e17fce715ec263627c3300f6e2e9b52661",
+    "blind-review-packet.partial.json": "fb1a8091f65a9c7556d58def810d9f81e1b1ba2697aa500869cfd93e19e5421a",
+    "blind-review.md": "b9df1454b953a8ada7fa3714b399afce54a68c989a0c4e777b34a3b48345aac3",
+    "blind-judgments.template.json": "797610722a235456c93b5b50aa255ca5356c1d61828fccbbc3e88b3b5318ca34",
+    "packaged-artifacts.sha256": "d626a42ba666f80050ba32142cecb958075be23f37a45663f0eab931b3e842b2"
+  },
+  "private_key_sha256": "13996e78dfb8517737c0fae23a5bb126690f6a5ed0e57ce178f92a88e8f9c831"
+}

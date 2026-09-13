@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "partial_diagnostic": true,
+  "plan_hash": "ed0be9c1facda89e48403e32998474875e4bd6ed4c2a588397f77e41aec191f8",
+  "baseline": "7e88455009da2d8f41b314e56ec767763fc6f379",
+  "candidate": "b46b1c33888bc8cdbd3604fbc4b98280b627c696",
+  "corpus": "7e88455009da2d8f41b314e56ec767763fc6f379",
+  "full_plan_expected_outputs": 648,
+  "selected_expected_outputs": 24,
+  "attempted_outputs": 24,
+  "valid_results": 15,
+  "failed_outputs": 9,
+  "human_reviewed": 0,
+  "complete": false,
+  "unrun_full_plan_outputs": 624,
+  "selected_coverage_rate": 1,
+  "valid_result_rate_among_selected": 0.625,
+  "full_plan_attempt_rate": 0.037037037037037035,
+  "failure_denominator_note": "All 9 failures remain in the 24 selected-call denominator. No attempt-1 output, repair, retry or best-of substitution is used.",
+  "interpretation": "Transport and evidence diagnostic only. Output validity and literal mechanical checks do not establish comparative quality, semantic fidelity or rollout readiness.",
+  "transport": {
+    "opencode_version": "1.18.30",
+    "runner_sha256": "80d8eab6aeaeb30e5a0a7f584d1bc3451ac89c025d107eb41b91add395f6aaae",
+    "calls_with_exit_zero": 24,
+    "exact_zen_route_audits": 24,
+    "all_route_audits_exact": true,
+    "all_cost_audits_zero": true,
+    "tools_enabled": 0,
+    "system_hook_invocations": 24,
+    "params_hook_invocations": 24
+  },
+  "wall_window": {
+    "first_started_at": "2026-09-13T22:53:51.035Z",
+    "last_recorded_at": "2026-09-13T23:01:06.009Z",
+    "elapsed_ms": 434974
+  },
+  "overall": {
+    "attempted": 24,
+    "valid_results": 15,
+    "failures": 9,
+    "failure_classes": {
+      "missing_opening_marker": 3,
+      "missing_closing_marker": 6,
+      "other": 0
+    },
+    "timing_ms": {
+      "total": 408761.442475,
+      "mean": 17031.726769791665,
+      "median": 15550.682957,
+      "p95": 26655.797444,
+      "min": 10299.983168,
+      "max": 45771.072013
+    },
+    "cost": {
+      "receipt_coverage": 24,
+      "total": 0
+    },
+    "usage": {
+      "receipt_coverage": 24,
+      "input_tokens": 101316,
+      "output_tokens": 10460
+    }
+  },
+  "by_family": {
+    "ling": {
+      "attempted": 12,
+      "valid_results": 12,
+      "failures": 0,
+      "failure_classes": {
+        "missing_opening_marker": 0,
+        "missing_closing_marker": 0,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 177745.20762499995,
+        "mean": 14812.100635416662,
+        "median": 15003.140409,
+        "p95": 19208.81758,
+        "min": 10299.983168,
+        "max": 19208.81758
+      },
+      "cost": {
+        "receipt_coverage": 12,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 12,
+        "input_tokens": 64558,
+        "output_tokens": 2209
+      }
+    },
+    "mimo": {
+      "attempted": 12,
+      "valid_results": 3,
+      "failures": 9,
+      "failure_classes": {
+        "missing_opening_marker": 3,
+        "missing_closing_marker": 6,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 231016.23485,
+        "mean": 19251.352904166666,
+        "median": 15998.248044,
+        "p95": 45771.072013,
+        "min": 10920.883815,
+        "max": 45771.072013
+      },
+      "cost": {
+        "receipt_coverage": 12,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 12,
+        "input_tokens": 36758,
+        "output_tokens": 8251
+      }
+    }
+  },
+  "by_model": {
+    "ling-3.0-flash-fin-free": {
+      "attempted": 12,
+      "valid_results": 12,
+      "failures": 0,
+      "failure_classes": {
+        "missing_opening_marker": 0,
+        "missing_closing_marker": 0,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 177745.20762499995,
+        "mean": 14812.100635416662,
+        "median": 15003.140409,
+        "p95": 19208.81758,
+        "min": 10299.983168,
+        "max": 19208.81758
+      },
+      "cost": {
+        "receipt_coverage": 12,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 12,
+        "input_tokens": 64558,
+        "output_tokens": 2209
+      }
+    },
+    "mimo-v2.5-free": {
+      "attempted": 12,
+      "valid_results": 3,
+      "failures": 9,
+      "failure_classes": {
+        "missing_opening_marker": 3,
+        "missing_closing_marker": 6,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 231016.23485,
+        "mean": 19251.352904166666,
+        "median": 15998.248044,
+        "p95": 45771.072013,
+        "min": 10920.883815,
+        "max": 45771.072013
+      },
+      "cost": {
+        "receipt_coverage": 12,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 12,
+        "input_tokens": 36758,
+        "output_tokens": 8251
+      }
+    }
+  },
+  "by_condition": {
+    "baseline": {
+      "attempted": 8,
+      "valid_results": 4,
+      "failures": 4,
+      "failure_classes": {
+        "missing_opening_marker": 2,
+        "missing_closing_marker": 2,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 161574.775156,
+        "mean": 20196.8468945,
+        "median": 15580.716167,
+        "p95": 45771.072013,
+        "min": 13970.69809,
+        "max": 45771.072013
+      },
+      "cost": {
+        "receipt_coverage": 8,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 8,
+        "input_tokens": 34784,
+        "output_tokens": 5368
+      }
+    },
+    "candidate": {
+      "attempted": 8,
+      "valid_results": 5,
+      "failures": 3,
+      "failure_classes": {
+        "missing_opening_marker": 1,
+        "missing_closing_marker": 2,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 138843.922542,
+        "mean": 17355.49031775,
+        "median": 15003.140409,
+        "p95": 26655.797444,
+        "min": 13597.05866,
+        "max": 26655.797444
+      },
+      "cost": {
+        "receipt_coverage": 8,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 8,
+        "input_tokens": 64736,
+        "output_tokens": 3752
+      }
+    },
+    "simple": {
+      "attempted": 8,
+      "valid_results": 6,
+      "failures": 2,
+      "failure_classes": {
+        "missing_opening_marker": 0,
+        "missing_closing_marker": 2,
+        "other": 0
+      },
+      "timing_ms": {
+        "total": 108342.74477700001,
+        "mean": 13542.843097125002,
+        "median": 11936.265613,
+        "p95": 18960.582919,
+        "min": 10299.983168,
+        "max": 18960.582919
+      },
+      "cost": {
+        "receipt_coverage": 8,
+        "total": 0
+      },
+      "usage": {
+        "receipt_coverage": 8,
+        "input_tokens": 1796,
+        "output_tokens": 1340
+      }
+    }
+  },
+  "failure_task_ids": [
+    "clean-01/mimo-transport-smoke/1/baseline",
+    "clean-01/mimo-transport-smoke/1/candidate",
+    "clear-edit-04/mimo-transport-smoke/1/baseline",
+    "context-01/mimo-transport-smoke/1/baseline",
+    "context-01/mimo-transport-smoke/1/candidate",
+    "context-01/mimo-transport-smoke/1/simple",
+    "preservation-04/mimo-transport-smoke/1/baseline",
+    "preservation-04/mimo-transport-smoke/1/candidate",
+    "preservation-04/mimo-transport-smoke/1/simple"
+  ],
+  "runner_commit": "fdee2ca6c8b93ac5bdda2567d0299dc1558cc12a",
+  "raw_evidence_visibility": "Private until blind judgments are frozen."
+}
