@@ -1,0 +1,98 @@
+[
+  {
+    "model": "mimo-v2.5-free",
+    "session": "ses_f6318f559ffeFQi728InvnGZl2",
+    "reviewed_commit": "36c5bdf5535091cb42ecc78b1b03dabeff2789df",
+    "scope": "complete production files",
+    "review_type": "static only; no execution by provider",
+    "receipt": [
+      {
+        "model": "mimo-v2.5-free",
+        "provider": "opencode",
+        "cost": 0,
+        "tokens": {
+          "total": 19618,
+          "input": 15138,
+          "output": 2688,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 1792
+          }
+        }
+      }
+    ]
+  },
+  {
+    "model": "ling-3.0-flash-fin-free",
+    "session": "ses_f6318f58affezLVPAeJm5RALCr",
+    "reviewed_commit": "36c5bdf5535091cb42ecc78b1b03dabeff2789df",
+    "scope": "complete production files",
+    "review_type": "static only; no execution by provider",
+    "receipt": [
+      {
+        "model": "ling-3.0-flash-fin-free",
+        "provider": "opencode",
+        "cost": 0,
+        "tokens": {
+          "total": 48784,
+          "input": 16961,
+          "output": 3108,
+          "reasoning": 26795,
+          "cache": {
+            "write": 0,
+            "read": 1920
+          }
+        }
+      }
+    ]
+  },
+  {
+    "model": "mimo-v2.5-free",
+    "session": "ses_f631191a2ffe7YGPr5W1iZHt15",
+    "reviewed_commit": "c520ac78067a79a6cf4b99241dfb992bb43c03d2",
+    "scope": "final amendment plus complete comparison module",
+    "review_type": "static only; no execution by provider",
+    "receipt": [
+      {
+        "model": "mimo-v2.5-free",
+        "provider": "opencode",
+        "cost": 0,
+        "tokens": {
+          "total": 10488,
+          "input": 7151,
+          "output": 1545,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 1792
+          }
+        }
+      }
+    ]
+  },
+  {
+    "model": "ling-3.0-flash-fin-free",
+    "session": "ses_f63119189ffe15AhXiCBVhEbcw",
+    "reviewed_commit": "c520ac78067a79a6cf4b99241dfb992bb43c03d2",
+    "scope": "final amendment plus complete comparison module",
+    "review_type": "static only; no execution by provider",
+    "receipt": [
+      {
+        "model": "ling-3.0-flash-fin-free",
+        "provider": "opencode",
+        "cost": 0,
+        "tokens": {
+          "total": 14941,
+          "input": 7943,
+          "output": 493,
+          "reasoning": 4585,
+          "cache": {
+            "write": 0,
+            "read": 1920
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "implementationCommit": "c520ac78067a79a6cf4b99241dfb992bb43c03d2",
+  "verifiedSources": 38,
+  "files": {
+    "summary.json": {
+      "sha256": "ea9990d0065fee8f36b4bb51fcc969bdc5d950125005814884dbd4bc32c14b56",
+      "bytes": 2430489,
+      "gzipSha256": "9104bf04b13dfc458cb848906530a3ae398b3789af5fd8c7b479651db1cca4e9",
+      "gzipBytes": 277892
+    },
+    "decisions.jsonl": {
+      "sha256": "5f00c4508da5674245aabbd85279d12d94f77de3482578e79396c4e2a6fe25c1",
+      "bytes": 6473480,
+      "gzipSha256": "a3eb6b18602a1817b724c0830290d5b799cf0a35f5d93034d8de60b207643a4b",
+      "gzipBytes": 1005225
+    }
+  }
+}
