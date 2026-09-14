@@ -6,6 +6,10 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+### Fixed
+
+- Preserve non-tracking query parameters when removing AI-referrer parameters from URLs during rewrite validation (#210).
+
 ## [3.35.0] — 2026-09-13
 
 ### Changed

@@ -47,7 +47,7 @@ const AIDetectorValidate = (() => {
   // Tracking parameters this skill is documented to strip (SKILL.md,
   // "AI-tool URL parameters"). Kept in sync with the `ai-utm-source`
   // detector category in patterns.js.
-  const AI_URL_PARAMS = /[?&](?:utm_source=(?:chatgpt\.com|openai(?:\.com)?|copilot\.com|claude\.ai|perplexity\.ai|gemini\.google\.com|grok\.com)|referrer=grok\.com)\b/gi;
+  const AI_URL_PARAM = /^(?:utm_source=(?:chatgpt\.com|openai(?:\.com)?|copilot\.com|claude\.ai|perplexity\.ai|gemini\.google\.com|grok\.com)|referrer=grok\.com)$/i;
 
   function extractAll(re, text) {
     const out = [];
@@ -72,7 +72,18 @@ const AIDetectorValidate = (() => {
   }
 
   function normalizeUrl(u) {
-    return u.replace(AI_URL_PARAMS, '').replace(/[?&]$/, '');
+    const queryStart = u.indexOf('?');
+    const fragmentStart = u.indexOf('#');
+    if (queryStart === -1 || (fragmentStart !== -1 && fragmentStart < queryStart)) return u;
+
+    const queryEnd = fragmentStart === -1 ? u.length : fragmentStart;
+    const params = u.slice(queryStart + 1, queryEnd).split('&');
+    const kept = params.filter((param) => !AI_URL_PARAM.test(param));
+    const suffix = u.slice(queryEnd);
+
+    return kept.length > 0
+      ? `${u.slice(0, queryStart)}?${kept.join('&')}${suffix}`
+      : `${u.slice(0, queryStart)}${suffix}`;
   }
 
   /** Collapse cell padding so a re-aligned table isn't reported as edited. */
