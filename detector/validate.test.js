@@ -173,6 +173,10 @@ test('stripping AI tracking parameters preserves the remaining query string', ()
     ['?utm_source=chatgpt.com&', ''],
     ['?&utm_source=chatgpt.com', ''],
     ['?a=1&&utm_source=chatgpt.com', '?a=1'],
+    ['?a=1&&b=2&utm_source=chatgpt.com', '?a=1&&b=2'],
+    ['?utm_source=chatgpt.com&&b=1', '?&b=1'],
+    ['?a=1&utm_source=chatgpt.com&', '?a=1&'],
+    ['?referrer=grok.com&&b=1', '?&b=1'],
   ];
 
   for (const [beforeQuery, afterQuery] of cases) {

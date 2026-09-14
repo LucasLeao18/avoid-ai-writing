@@ -93,9 +93,8 @@ const AIDetectorValidate = (() => {
     }
 
     const params = query.split('&');
-    if (!params.some((param) => AI_URL_PARAM.test(param))) return u;
-
     const kept = params.filter((param) => param !== '' && !AI_URL_PARAM.test(param));
+    if (kept.length === params.length) return u;
 
     return kept.length > 0
       ? `${u.slice(0, queryStart)}?${kept.join('&')}${suffix}`
