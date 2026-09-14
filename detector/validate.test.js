@@ -191,12 +191,21 @@ test('stripping a terminal AI tracker preserves adjacent sentence punctuation', 
   const cases = [
     ['https://example.com/post?utm_source=chatgpt.com.', 'https://example.com/post.'],
     ['https://example.com/post?referrer=grok.com,', 'https://example.com/post,'],
+    ['https://example.com/post?utm_source=chatgpt.com?', 'https://example.com/post?'],
+    ['https://example.com/post?utm_source=chatgpt.com!?', 'https://example.com/post!?'],
   ];
 
   for (const [beforeUrl, afterUrl] of cases) {
     const r = validate(`See ${beforeUrl}`, `See ${afterUrl}`, { skipResidual: true });
     assert.equal(r.ok, true, `${beforeUrl}: ${formatResult(r)}`);
   }
+});
+
+test('removing a terminal question mark from a URL is still an error', () => {
+  const before = 'See https://example.com/post? for details.';
+  const after = 'See https://example.com/post for details.';
+  const r = validate(before, after, { skipResidual: true });
+  assert.ok(codes(r).includes('url-missing'), formatResult(r));
 });
 
 test('changing a non-tracking query parameter → error', () => {

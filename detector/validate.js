@@ -80,6 +80,10 @@ const AIDetectorValidate = (() => {
     let query = u.slice(queryStart + 1, queryEnd);
     let suffix = u.slice(queryEnd);
 
+    // A terminal question mark is ambiguous with sentence punctuation because
+    // the bare-URL extractor captures it. Preserve it for symmetric comparison.
+    if (queryStart === u.length - 1) return u;
+
     // Bare-URL extraction includes adjacent sentence punctuation. Treat it as
     // prose only when removing it exposes an exact tracker in the final field.
     if (queryEnd === u.length) {
