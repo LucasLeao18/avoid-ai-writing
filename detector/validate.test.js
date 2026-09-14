@@ -168,6 +168,11 @@ test('stripping AI tracking parameters preserves the remaining query string', ()
     ['?utm_source=chatgpt.com', ''],
     ['?referrer=grok.com&b=1', '?b=1'],
     ['?a=1&referrer=grok.com', '?a=1'],
+    ['?a=1&referrer=grok.com&b=2', '?a=1&b=2'],
+    ['?referrer=grok.com', ''],
+    ['?utm_source=chatgpt.com&', ''],
+    ['?&utm_source=chatgpt.com', ''],
+    ['?a=1&&utm_source=chatgpt.com', '?a=1'],
   ];
 
   for (const [beforeQuery, afterQuery] of cases) {
@@ -175,6 +180,18 @@ test('stripping AI tracking parameters preserves the remaining query string', ()
     const after = `See https://example.com/post${afterQuery} for details.`;
     const r = validate(before, after, { skipResidual: true });
     assert.equal(r.ok, true, `${beforeQuery}: ${formatResult(r)}`);
+  }
+});
+
+test('stripping a terminal AI tracker preserves adjacent sentence punctuation', () => {
+  const cases = [
+    ['https://example.com/post?utm_source=chatgpt.com.', 'https://example.com/post.'],
+    ['https://example.com/post?referrer=grok.com,', 'https://example.com/post,'],
+  ];
+
+  for (const [beforeUrl, afterUrl] of cases) {
+    const r = validate(`See ${beforeUrl}`, `See ${afterUrl}`, { skipResidual: true });
+    assert.equal(r.ok, true, `${beforeUrl}: ${formatResult(r)}`);
   }
 });
 

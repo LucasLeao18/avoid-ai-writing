@@ -77,9 +77,25 @@ const AIDetectorValidate = (() => {
     if (queryStart === -1 || (fragmentStart !== -1 && fragmentStart < queryStart)) return u;
 
     const queryEnd = fragmentStart === -1 ? u.length : fragmentStart;
-    const params = u.slice(queryStart + 1, queryEnd).split('&');
-    const kept = params.filter((param) => !AI_URL_PARAM.test(param));
-    const suffix = u.slice(queryEnd);
+    let query = u.slice(queryStart + 1, queryEnd);
+    let suffix = u.slice(queryEnd);
+
+    // Bare-URL extraction includes adjacent sentence punctuation. Treat it as
+    // prose only when removing it exposes an exact tracker in the final field.
+    if (queryEnd === u.length) {
+      const punctuation = query.match(/[.,;:!?]+$/)?.[0] || '';
+      const withoutPunctuation = query.slice(0, query.length - punctuation.length);
+      const finalParam = withoutPunctuation.slice(withoutPunctuation.lastIndexOf('&') + 1);
+      if (punctuation && AI_URL_PARAM.test(finalParam)) {
+        query = withoutPunctuation;
+        suffix = punctuation;
+      }
+    }
+
+    const params = query.split('&');
+    if (!params.some((param) => AI_URL_PARAM.test(param))) return u;
+
+    const kept = params.filter((param) => param !== '' && !AI_URL_PARAM.test(param));
 
     return kept.length > 0
       ? `${u.slice(0, queryStart)}?${kept.join('&')}${suffix}`
